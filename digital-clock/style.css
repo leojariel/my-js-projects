@@ -46,6 +46,10 @@ body {
  border: 1px solid;
  transition: all 0.3s ease-out;
 }
+.buttons button.active {
+ background: #ffd6ff;
+ color: #a663cc;
+}
 .buttons button:hover {
  background: #ffd6ff;
  color: #a663cc;

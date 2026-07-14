@@ -1,4 +1,4 @@
-let use12hr = true;
+let hour12 = true;
 
 function formatTime(hour12 = true) {
  const date = new Date();
@@ -11,10 +11,12 @@ function formatTime(hour12 = true) {
  });
 }
 
-const timeFormatBtn = document.querySelectorAll(".h-format-btn");
-timeFormatBtn.forEach((btn, index) => {
+const formatBtn = document.querySelectorAll(".h-format-btn");
+formatBtn.forEach((btn, index) => {
  btn.addEventListener("click", () => {
-  use12hr = index === 0 ? true : false;
+  hour12 = index === 0 ? true : false;
+  formatBtn.forEach((btn) => btn.classList.remove("active"));
+  btn.classList.add("active");
   updateUI();
  });
 });
@@ -25,7 +27,7 @@ setInterval(() => {
 
 function updateUI() {
  const clockTimer = document.querySelector(".clock-timer");
- const time = formatTime(use12hr);
+ const time = formatTime(hour12);
  clockTimer.textContent = time;
 }
 
