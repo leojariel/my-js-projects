@@ -1,3 +1,7 @@
+const shuffleBtn = document.querySelector(".shuffle-btn");
+const hexCodeWrapper = document.querySelector(".hex-code-wrapper");
+const hexCode = document.querySelector(".hex-code");
+
 function generateHex() {
  const chars = "0123456789abcdef";
  let hex = "";
@@ -7,16 +11,23 @@ function generateHex() {
  return hex;
 }
 
-document.querySelector(".shuffle-btn").addEventListener("click", () => {
- const hex = generateHex();
- document.querySelector(".hex-code").textContent = `#${hex}`;
- document.body.style.backgroundColor = `#${hex}`;
-});
+function updateUI() {
+ shuffleBtn.addEventListener("click", () => {
+  const hex = generateHex();
+  hexCode.textContent = `#${hex}`;
+  document.body.style.backgroundColor = `#${hex}`;
+ });
+}
 
-document.querySelector(".hex-code-wrapper").addEventListener("click", () => {
- const hexCode = document.querySelector(".hex-code").textContent;
- navigator.clipboard
-  .writeText(hexCode)
-  .then(() => alert("Copied: " + hexCode))
-  .catch(() => alert("Failed to copy."));
-});
+function copyClipboard() {
+ hexCodeWrapper.addEventListener("click", () => {
+  const hex = hexCode.textContent;
+  navigator.clipboard
+   .writeText(hex)
+   .then(() => alert("Copied: " + hex))
+   .catch(() => alert("Failed to copy"));
+ });
+}
+
+updateUI();
+copyClipboard();
