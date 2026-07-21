@@ -8,61 +8,74 @@
    name="description"
    content="my 3rd js project which is countdown timer for date and time"
   />
+  <link rel="stylesheet" href="styles.css" />
   <title>Countdown Timer</title>
  </head>
  <body>
   <main>
-   <div class="countdown-wrapper">
-    <fieldset>
+   <fieldset>
+    <div class="header">
      <h1>Countdown Timer</h1>
+    </div>
 
-     <!-- countdown title -->
-     <div class="countdown-title">
-      <label for="countdown-title-input">Countdown Title:</label>
-      <input type="text" id="countdown-title-input" />
+    <form>
+     <!-- Countdown Title -->
+     <div class="input-field countdown-title">
+      <label for="title-input">Countdown Title:</label>
+      <input
+       type="text"
+       form="title-input"
+       placeholder="e.g, Birthday, New Year, Christmas..."
+       required
+      />
      </div>
 
-     <!-- day -->
-     <div class="day">
-      <label for="day-input">Day:</label>
-      <input type="text" id="day-input" />
+     <!-- Date and Time -->
+     <div class="fields">
+      <!-- Day -->
+      <div class="input-field column">
+       <label for="day-input">Day:</label>
+       <input type="text" id="day-input" placeholder="dd" />
+      </div>
+      <!-- Month -->
+      <div class="input-field column">
+       <label for="month-input">Month:</label>
+       <input type="text" id="month-input" placeholder="mm" />
+      </div>
+      <!-- Year -->
+      <div class="input-field column">
+       <label for="year-input">Year:</label>
+       <input type="text" id="year-input" placeholder="yyyy" />
+      </div>
      </div>
 
-     <!-- Month -->
-     <div class="month">
-      <label for="month-input">Month:</label>
-      <input type="text" id="month-input" />
+     <div class="fields">
+      <!-- Day -->
+      <div class="input-field column">
+       <label for="hour-input">Hour:</label>
+       <input type="text" id="hour-input" placeholder="hh" />
+      </div>
+      <!-- Month -->
+      <div class="input-field column">
+       <label for="minute-input">Minute:</label>
+       <input type="text" id="minute-input" placeholder="mm" />
+      </div>
+      <!-- Year -->
+      <div class="input-field column">
+       <label for="second-input">Second:</label>
+       <input type="text" id="second-input" placeholder="ss" />
+      </div>
      </div>
 
-     <!-- Year -->
-     <div class="year">
-      <label for="year-input">Year:</label>
-      <input type="text" id="year-input" />
+     <!-- Location -->
+     <div class="input-field event-location">
+      <label for="location-input">Location of Event:</label>
+      <input type="text" form="location-input" />
      </div>
 
-     <!-- Hour -->
-     <div class="hour">
-      <label for="hour-input">Hour:</label>
-      <input type="text" id="hour-input" />
-     </div>
-
-     <!-- Minute -->
-     <div class="minute">
-      <label for="minute-input">Minute:</label>
-      <input type="text" id="minute-input" />
-     </div>
-
-     <div class="second">
-      <label for="second-input">Second:</label>
-      <input type="text" id="second-input" />
-     </div>
-
-     <div class="location">
-      <label for="location-input">Event Location:</label>
-      <input type="text" id="location-input" />
-     </div>
-    </fieldset>
-   </div>
+     <button>Create Countdown</button>
+    </form>
+   </fieldset>
   </main>
 
   <script src="countdown-timer.js"></script>
