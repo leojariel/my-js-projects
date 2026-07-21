@@ -44,6 +44,7 @@ form {
  width: 100%;
  flex-direction: column;
  margin: 5px 0;
+ position: relative;
 }
 .event-location {
  margin-bottom: 0;
@@ -90,4 +91,28 @@ form {
 }
 .create-btn:active {
  transform: scale(0.95);
+}
+
+/* ! countdown title */
+.suggestion-list {
+ list-style: none;
+ font-size: 18px;
+ padding: 0.5em 0.7em;
+
+ position: absolute;
+ top: 100%;
+ inset-inline: 0;
+ z-index: 2;
+ background-color: #a2d2ff;
+ display: none;
+}
+.suggestion-list.active {
+ display: block;
+}
+.suggestion-list li {
+ padding: 0.5em 0.7em;
+ cursor: pointer;
+}
+.suggestion-list li:hover {
+ background: #bde0fe;
 }
