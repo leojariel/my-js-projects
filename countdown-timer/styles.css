@@ -56,6 +56,9 @@ form {
 .input-field input {
  font-size: 20px;
  padding: 10px;
+ border: 1px solid #6096ba;
+ border-radius: 10px;
+ outline: none;
 }
 .column {
  width: calc(100% / 3 - 15px);
@@ -72,4 +75,19 @@ form {
  .column {
   width: 100%;
  }
+}
+.create-btn {
+ font-size: 18px;
+ padding: 0.5em 0.7em;
+ margin-top: 25px;
+ background: #a3cef1;
+ border: none;
+ border-radius: 10px;
+ cursor: pointer;
+}
+.create-btn:hover {
+ background: #a9d1f1;
+}
+.create-btn:active {
+ transform: scale(0.95);
 }
