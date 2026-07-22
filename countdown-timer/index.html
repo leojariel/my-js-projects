@@ -29,7 +29,7 @@
        placeholder="e.g, Birthday, New Year, Christmas..."
        required
       />
-      <ul class="suggestion-list">
+      <ul class="suggestion-list full-width">
        <li>Birthday</li>
        <li>New Year</li>
        <li>Christmas</li>
@@ -43,12 +43,99 @@
       <!-- Day -->
       <div class="input-field column">
        <label for="day-input">Day:</label>
-       <input type="text" id="day-input" placeholder="dd" />
+       <input
+        type="text"
+        id="day-input"
+        class="dropdown-input"
+        placeholder="dd"
+       />
+       <div class="suggestion-list">
+        <table>
+         <tbody>
+          <tr>
+           <!-- first column -->
+           <td>
+            <ul>
+             <li>01</li>
+             <li>02</li>
+             <li>03</li>
+             <li>04</li>
+             <li>05</li>
+             <li>06</li>
+             <li>07</li>
+             <li>08</li>
+             <li>09</li>
+             <li>10</li>
+            </ul>
+           </td>
+
+           <!-- second column -->
+           <td>
+            <ul>
+             <li>11</li>
+             <li>12</li>
+             <li>13</li>
+             <li>14</li>
+             <li>15</li>
+             <li>16</li>
+             <li>17</li>
+             <li>18</li>
+             <li>19</li>
+             <li>20</li>
+            </ul>
+           </td>
+
+           <!-- third column -->
+           <td>
+            <ul>
+             <li>21</li>
+             <li>22</li>
+             <li>23</li>
+             <li>24</li>
+             <li>25</li>
+             <li>26</li>
+             <li>27</li>
+             <li>28</li>
+             <li>29</li>
+             <li>30</li>
+            </ul>
+           </td>
+
+           <td>
+            <ul>
+             <li>31</li>
+            </ul>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
       </div>
       <!-- Month -->
       <div class="input-field column">
        <label for="month-input">Month:</label>
-       <input type="text" id="month-input" placeholder="mm" />
+       <input
+        type="text"
+        id="month-input"
+        class="dropdown-input"
+        placeholder="mm"
+       />
+       <div class="suggestion-list months full-width">
+        <ul>
+         <li>01 - Jan</li>
+         <li>02 - Feb</li>
+         <li>03 - Mar</li>
+         <li>04 - Apr</li>
+         <li>05 - May</li>
+         <li>06 - Jun</li>
+         <li>07 - Jul</li>
+         <li>08 - Aug</li>
+         <li>09 - Sept</li>
+         <li>10 - Oct</li>
+         <li>11 - Nov</li>
+         <li>12 - Dec</li>
+        </ul>
+       </div>
       </div>
       <!-- Year -->
       <div class="input-field column">

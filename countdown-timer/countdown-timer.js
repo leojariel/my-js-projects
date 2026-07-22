@@ -19,7 +19,11 @@ document.addEventListener("click", (event) => {
   const parent = event.target.closest(".input-field");
   const input = parent.querySelector(".dropdown-input");
 
-  input.value = event.target.textContent;
+  if (event.target.closest(".months")) {
+   input.value = event.target.textContent.split("-")[0].trim();
+  } else {
+   input.value = event.target.textContent;
+  }
 
   closeAllDropdowns();
   return;

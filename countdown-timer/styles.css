@@ -22,7 +22,7 @@ fieldset {
  outline: none;
  border: 1px solid #6096ba;
  border-radius: 15px;
- overflow: hidden;
+ /* overflow: hidden; */
  background: #e7ecef;
 }
 form {
@@ -32,6 +32,7 @@ form {
 
 .header {
  background: #a3cef1;
+ border-radius: 15px 15px 0 0;
  padding: 1em;
 }
 .fields {
@@ -93,18 +94,24 @@ form {
  transform: scale(0.95);
 }
 
-/* ! countdown title */
-.suggestion-list {
+/* ! suggestion list */
+ul {
  list-style: none;
- font-size: 18px;
+}
+.suggestion-list {
+ font-size: 14px;
  padding: 0.5em 0.7em;
 
  position: absolute;
  top: 100%;
- inset-inline: 0;
- z-index: 2;
+ right: 0;
+ /* inset-inline: 0; */
+ z-index: 999;
  background-color: #a2d2ff;
  display: none;
+}
+.suggestion-list.full-width {
+ width: 100%;
 }
 .suggestion-list.active {
  display: block;
@@ -115,4 +122,7 @@ form {
 }
 .suggestion-list li:hover {
  background: #bde0fe;
+}
+td {
+ vertical-align: top;
 }
