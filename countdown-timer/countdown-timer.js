@@ -73,18 +73,44 @@ function showDays() {
 }
 
 function showHour() {
- const ul = document.querySelector(".hour-list");
+ const container = document.getElementById("hour-list");
 
- const fragment = document.createDocumentFragment();
+ let html = "";
 
- for (let i = 1; i < 24; i++) {
-  const li = document.createElement("li");
-  li.textContent = i;
-  fragment.appendChild(li);
+ for (let i = 0; i < 24; i++) {
+  if (i % 10 === 0) {
+   if (i > 0) html += `</ul></td>`;
+   html += `<td><ul>`;
+  }
+
+  const formattedHour = String(i).padStart(2, "0");
+  html += `<li>${formattedHour}</li>`;
  }
 
- ul.appendChild(fragment);
+ html += `</ul></td>`;
+ container.innerHTML = html;
 }
+
+function showMMandSS() {
+ const containers = document.querySelectorAll(".mmAndSs-list");
+
+ let html = "";
+
+ for (let minute = 0; minute < 60; minute++) {
+  if (minute % 10 === 0) {
+   if (minute > 1) html += `</ul></td>`;
+   html += `<td><ul>`;
+  }
+
+  const formattedMinute = String(minute).padStart(2, "0");
+  html += `<li>${formattedMinute}</li>`;
+ }
+
+ html += `</ul></td>`;
+ containers.forEach((container) => (container.innerHTML = html));
+}
+
+showMMandSS();
 showHour();
 showYears();
 showDays();

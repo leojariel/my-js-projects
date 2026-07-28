@@ -106,17 +106,47 @@
         class="dropdown-input"
         placeholder="hh"
        />
-       <ul class="suggestion-list hour-list full-width"></ul>
+       <div class="suggestion-list">
+        <table>
+         <tbody>
+          <tr id="hour-list"></tr>
+         </tbody>
+        </table>
+       </div>
       </div>
       <!-- Month -->
       <div class="input-field column">
        <label for="minute-input">Minute:</label>
-       <input type="text" id="minute-input" placeholder="mm" />
+       <input
+        type="text"
+        id="minute-input"
+        class="dropdown-input"
+        placeholder="mm"
+       />
+       <div class="suggestion-list">
+        <table>
+         <tbody>
+          <tr class="mmAndSs-list"></tr>
+         </tbody>
+        </table>
+       </div>
       </div>
       <!-- Year -->
       <div class="input-field column">
        <label for="second-input">Second:</label>
-       <input type="text" id="second-input" placeholder="ss" />
+       <input
+        type="text"
+        class="dropdown-input"
+        id="second-input"
+        placeholder="ss"
+       />
+       <div class="suggestion-list">
+        <table>
+         <tbody>
+          <tr class="mmAndSs-list"></tr>
+         </tbody>
+        </table>
+       </div>
       </div>
      </div>
 
