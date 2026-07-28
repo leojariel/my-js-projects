@@ -103,8 +103,11 @@ ul {
  padding: 0.5em 0.7em;
 
  position: absolute;
+ height: 230px;
+ overflow-y: scroll;
+ scrollbar-width: thin;
  top: 100%;
- right: 0;
+ left: 0;
  /* inset-inline: 0; */
  z-index: 999;
  background-color: #a2d2ff;

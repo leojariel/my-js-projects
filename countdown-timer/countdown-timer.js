@@ -32,3 +32,20 @@ document.addEventListener("click", (event) => {
   closeAllDropdowns();
  }
 });
+
+function showYears() {
+ const currentYear = new Date().getFullYear();
+ const YEAR_LIMIT = 10;
+ const ul = document.querySelector(".years-list");
+
+ const fragment = document.createDocumentFragment();
+
+ for (let i = 0; i < YEAR_LIMIT; i++) {
+  const li = document.createElement("li");
+  li.textContent = currentYear + i;
+  fragment.appendChild(li);
+ }
+
+ ul.appendChild(fragment);
+}
+showYears();
