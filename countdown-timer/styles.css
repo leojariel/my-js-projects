@@ -103,8 +103,9 @@ ul {
  padding: 0.5em 0.7em;
 
  position: absolute;
- height: 230px;
- overflow-y: scroll;
+ max-height: 230px;
+ overflow-y: auto;
+ overflow-x: hidden;
  scrollbar-width: thin;
  top: 100%;
  left: 0;
