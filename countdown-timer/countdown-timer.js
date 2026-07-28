@@ -48,4 +48,43 @@ function showYears() {
 
  ul.appendChild(fragment);
 }
+
+function showDays() {
+ const container = document.getElementById("days-row");
+
+ const now = new Date();
+ const totalDays = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+
+ let html = "";
+
+ for (let day = 1; day <= totalDays; day++) {
+  if ((day - 1) % 10 === 0) {
+   if (day > 1) html += `</ul></td>`;
+   html += `<td><ul>`;
+  }
+
+  const formattedDay = String(day).padStart(2, "0");
+  html += `<li>${formattedDay}</li>`;
+ }
+
+ html += `</ul></td>`;
+
+ container.innerHTML = html;
+}
+
+function showHour() {
+ const ul = document.querySelector(".hour-list");
+
+ const fragment = document.createDocumentFragment();
+
+ for (let i = 1; i < 24; i++) {
+  const li = document.createElement("li");
+  li.textContent = i;
+  fragment.appendChild(li);
+ }
+
+ ul.appendChild(fragment);
+}
+showHour();
 showYears();
+showDays();
