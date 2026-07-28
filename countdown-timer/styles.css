@@ -98,7 +98,22 @@ form {
 ul {
  list-style: none;
 }
+.suggestion-list {
+ font-size: 14px;
+ padding: 0.5em 0.7em;
 
+ position: absolute;
+ max-height: 230px;
+ overflow-y: auto;
+ overflow-x: hidden;
+ scrollbar-width: thin;
+ top: 100%;
+ left: 0;
+ /* inset-inline: 0; */
+ z-index: 998;
+ background-color: #a2d2ff;
+ display: none;
+}
 .suggestion-list.full-width {
  width: 100%;
 }
