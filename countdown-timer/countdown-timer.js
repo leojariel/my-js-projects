@@ -53,7 +53,7 @@ function showDays() {
  const container = document.getElementById("days-row");
 
  const now = new Date();
- const totalDays = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+ const totalDays = 31;
 
  let html = "";
 
@@ -115,6 +115,8 @@ showHour();
 showYears();
 showDays();
 
+let countdownInterval;
+
 // userform
 function userForm() {
  const form = document.getElementById("userForm");
@@ -122,11 +124,42 @@ function userForm() {
 
  form.addEventListener("submit", function (event) {
   event.preventDefault();
+  clearInterval(countdownInterval);
 
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-  console.log(data);
+
+  displayCountdown(data);
  });
 }
 
+// display countdown
+function displayCountdown(data) {
+ const day = data.day;
+ const month = data.month;
+ const year = data.year;
+ const hour = data.hour;
+ const minute = data.minute;
+ const second = data.second;
+
+ const countdownTitle = data.countdownTitle;
+ const location = data.location;
+
+ const date = new Date(year, month - 1, day, hour, minute, second);
+
+ countdownInterval = setInterval(() => {
+  const now = new Date().getTime();
+
+  const distance = date.getTime() - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+   (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+  );
+  const minute = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const second = Math.floor((distance % (1000 * 60)) / 1000);
+  document.querySelector(".countdown-number").innerHTML =
+   `${days}d ${hours}h ${minute}m ${second}s`;
+ }, 1000);
+}
 userForm();

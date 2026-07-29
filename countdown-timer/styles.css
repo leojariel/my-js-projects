@@ -26,13 +26,35 @@ fieldset {
  background: #e7ecef;
 }
 form {
- width: 50%;
  padding: 1em;
 }
 
 .header {
  background: #a3cef1;
  border-radius: 15px 15px 0 0;
+ padding: 1em;
+}
+.field-container {
+ display: flex;
+}
+@media (max-width: 845px) {
+ .field-container {
+  flex-direction: column-reverse;
+ }
+ .countdown-display {
+  border-radius: 0 !important;
+ }
+}
+.countdown-ui {
+ flex: 1;
+}
+.countdown-display {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: clamp(24px, 4vw, 46px);
+ border-bottom-right-radius: 15px;
+ background: lightblue;
  padding: 1em;
 }
 .fields {
