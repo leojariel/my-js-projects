@@ -18,7 +18,7 @@
      <h1>Countdown Timer</h1>
     </div>
 
-    <form>
+    <form id="userForm">
      <!-- Countdown Title -->
      <div class="input-field countdown-title">
       <label for="title-input">Countdown Title:</label>
@@ -26,6 +26,7 @@
        type="text"
        id="title-input"
        class="dropdown-input"
+       name="countdown-title"
        placeholder="e.g, Birthday, New Year, Christmas..."
        required
       />
@@ -46,6 +47,7 @@
        <input
         type="text"
         id="day-input"
+        name="day"
         class="dropdown-input"
         placeholder="dd"
        />
@@ -63,6 +65,7 @@
        <input
         type="text"
         id="month-input"
+        name="month"
         class="dropdown-input"
         placeholder="mm"
        />
@@ -89,6 +92,7 @@
        <input
         type="text"
         class="dropdown-input"
+        name="year"
         id="year-input"
         placeholder="yyyy"
        />
@@ -97,12 +101,13 @@
      </div>
 
      <div class="fields">
-      <!-- Day -->
+      <!-- Hour -->
       <div class="input-field column">
        <label for="hour-input">Hour:</label>
        <input
         type="text"
         id="hour-input"
+        name="hour"
         class="dropdown-input"
         placeholder="hh"
        />
@@ -114,12 +119,13 @@
         </table>
        </div>
       </div>
-      <!-- Month -->
+      <!-- Minute -->
       <div class="input-field column">
        <label for="minute-input">Minute:</label>
        <input
         type="text"
         id="minute-input"
+        name="minute"
         class="dropdown-input"
         placeholder="mm"
        />
@@ -131,12 +137,13 @@
         </table>
        </div>
       </div>
-      <!-- Year -->
+      <!-- Seconds -->
       <div class="input-field column">
        <label for="second-input">Second:</label>
        <input
         type="text"
         class="dropdown-input"
+        name="second"
         id="second-input"
         placeholder="ss"
        />
@@ -153,7 +160,7 @@
      <!-- Location -->
      <div class="input-field event-location">
       <label for="location-input">Location of Event:</label>
-      <input type="text" form="location-input" required />
+      <input type="text" name="location" class="location-input" required />
      </div>
 
      <button type="submit" class="create-btn">Create Countdown</button>

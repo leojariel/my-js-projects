@@ -114,3 +114,19 @@ showMMandSS();
 showHour();
 showYears();
 showDays();
+
+// userform
+function userForm() {
+ const form = document.getElementById("userForm");
+ console.log(form);
+
+ form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  console.log(data);
+ });
+}
+
+userForm();
