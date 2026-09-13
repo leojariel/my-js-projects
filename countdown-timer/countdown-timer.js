@@ -33,9 +33,11 @@ document.addEventListener("click", (event) => {
  }
 });
 
+const tryDate = new Date().getFullYear();
+
 function showYears() {
  const currentYear = new Date().getFullYear();
- const YEAR_LIMIT = 10;
+ const YEAR_LIMIT = 20;
  const ul = document.querySelector(".years-list");
 
  const fragment = document.createDocumentFragment();
@@ -127,7 +129,9 @@ function userForm() {
   clearInterval(countdownInterval);
 
   const formData = new FormData(form);
+  console.log(formData);
   const data = Object.fromEntries(formData.entries());
+  console.log(data);
 
   displayCountdown(data);
  });
@@ -158,8 +162,14 @@ function displayCountdown(data) {
   );
   const minute = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const second = Math.floor((distance % (1000 * 60)) / 1000);
-  document.querySelector(".countdown-number").innerHTML =
-   `${days}d ${hours}h ${minute}m ${second}s`;
+
+  document.querySelector(".countdown-number").innerHTML = `
+   <div>
+    <h2>${countdownTitle}</h2>
+    <p>${days}d ${hours}h ${minute}m ${second}s</p>
+    <h3>${location}</h3>
+   </div>
+  `;
  }, 1000);
 }
 userForm();
